@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pomodoro Clock</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -12,10 +12,10 @@
     <h1>Pomodoro Clock</h1>
     <div class="clock">
         <div class="status">
-            <div class="work highlight">Work</div>
-            <div class="break">Break</div>
+            <div class="work highlight" id="workSign">Work</div>
+            <div class="play" id="playSign">Play</div>
         </div>
-        <div class="display">25:00</div>
+        <div class="display" id="mainDisplay"></div>
         <div class="sessions">
             <div class="square highlight" id="one"></div>
             <div class="square" id="two"></div>
@@ -27,55 +27,43 @@
             <div class="square" id="eight"></div>
         </div>
         <div class="buttons">
-            <div class="button">
-                <i class="material-icons size-buttons">pause</i>
+            <div class="buttonInactive" id="pauseBtn">
+                <i class="material-icons button-size">pause</i>
             </div>
-            <div class="button highlight">
-                <i class="material-icons size-buttons">play_arrow</i>
+            <div class="button highlight" id="playBtn">
+                <i class="material-icons button-size">play_arrow</i>
             </div>
-            <div class="button">
-                <i class="material-icons size-buttons">stop</i>
+            <div class="buttonInactive" id="stopBtn">
+                <i class="material-icons button-size">stop</i>
             </div>
-            <div class="button">
-                <i class="material-icons size-buttons">loop</i>
+            <div class="button" id="resetBtn">
+                <i class="material-icons button-size">loop</i>
             </div>
         </div>
     </div>
     <div class="settings">
-        <div class="work-length">
-            <div class="wrk-time">25:00</div>
-            <div class="wrk-arrows">
-                <div class="wrk-up">
-                    <i class="material-icons size-arrows selected">arrow_drop_up</i>
-                </div>
-                <div class="wrk-down">
-                    <i class="material-icons size-arrows">arrow_drop_down</i>
-                </div>
-            </div>
+        <div class="work-duration">
+            <i class="material-icons up-arrows selected" id="workUpArrow">arrow_drop_up</i>
+            <div class="work-time" id="workDisplay"></div>
+            <i class="material-icons down-arrows" id="workDownArrow">arrow_drop_down</i>
         </div>
         <div class="sound">
             <div class="sound-on">
-                <i class="material-icons size-buttons selected">volume_up</i>
+                <i class="material-icons button-size selected" id="soundOn">volume_up</i>
             </div>
             <div class="sound-off">
-                <i class="material-icons size-buttons">volume_off</i>
+                <i class="material-icons button-size" id="soundOff">volume_off</i>
             </div>
         </div>
-        <div class="break-length">
-            <div class="brk-time">5:00</div>
-            <div class="brk-arrows">
-                <div class="brk-up">
-                    <i class="material-icons size-arrows">arrow_drop_up</i>
-                </div>
-                <div class="brk-down">
-                    <i class="material-icons size-arrows">arrow_drop_down</i>
-                </div>
-            </div>
+        <div class="play-duration">
+            <i class="material-icons up-arrows" id="playUpArrow">arrow_drop_up</i>
+            <div class="play-time" id="playDisplay"></div>
+            <i class="material-icons down-arrows" id="playDownArrow">arrow_drop_down</i>
         </div>
     </div>
 </div>
-
-
+<audio id="switchSound" src="sound/switch.mp3"></audio>
+<audio id="doneSound" src="sound/done.mp3"></audio>
 </body>
-<script type="text/javascript" src="style.css"></script>
+<script type="text/javascript" src="javascript.js"></script>
 </html>
